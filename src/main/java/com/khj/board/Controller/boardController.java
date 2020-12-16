@@ -32,6 +32,14 @@ public class boardController {
         mv.addObject("list",list);
         return mv;
     }
+    @RequestMapping(value = "boardVue",method = RequestMethod.GET)
+    public ModelAndView boardVue(){
+        ModelAndView mv = new ModelAndView("board/boardVue");
+        List<JPA_Board> list = boardService.selectJPA_BoardList();
+        System.out.println(list);
+        mv.addObject("list",list);
+        return mv;
+    }
     @GetMapping("boardWrite")
     public String boardWritePage(){
         return "board/boardWrite";

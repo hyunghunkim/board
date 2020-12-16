@@ -17,10 +17,10 @@ public class homeController {
 
     private final UserService userService;
 
-    @RequestMapping("/")
-    public String home(){
-        return "index";
-    }
+//    @RequestMapping("/")
+//    public String home(){
+//        return "index";
+//    }
     @GetMapping("signUp")
     public String signUp(){
         return "user/signUp";
@@ -33,6 +33,13 @@ public class homeController {
         session.setAttribute("user",user);
 
         return "redirect:/board/boardList";
+    }
+    @RequestMapping("logout")
+    public String logout(HttpServletRequest request){
+        HttpSession session = request.getSession();
+        session.invalidate();
+
+        return "main";
     }
 
 }
