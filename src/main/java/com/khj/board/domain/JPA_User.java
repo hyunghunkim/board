@@ -17,7 +17,7 @@ public class JPA_User {
     private String email;
 
     @Column( length = 50, nullable = false)
-    private String userName;
+    private String name;
 
     @Column( length = 50, nullable = false)
     private String password;

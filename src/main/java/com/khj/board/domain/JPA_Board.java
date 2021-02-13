@@ -25,5 +25,5 @@ public class JPA_Board {
     private LocalDateTime createdDate = LocalDateTime.now();
 
     @Column(length = 50, nullable = false)
-    private String userName;
+    private String name;
 }
